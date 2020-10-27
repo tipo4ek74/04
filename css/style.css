@@ -1,0 +1,408 @@
+:root{
+    --logo: #2196F3;
+    --main-text-cl: #212121;
+    --accent-cl: #2196F3;
+    --title-cl: #FFFFFF;
+    --black: #212121;
+    --grey: #757575;
+    --black-rock: #2F303A;
+    --bg-color: #E5E5E5;
+    --bg-cl-blu:#F5F4FA;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--grey);
+    background-color: var(--bg-color); 
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.bg-color-w {
+    background-color: var(--title-cl);
+}
+
+.container {
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+h1, 
+h2, 
+h3, 
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link,
+.link-hf,
+.heder-logo {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-hf {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.link:hover,
+.link:focus { 
+    color: var(--accent-cl);
+}
+ 
+
+
+ .btn {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+ }
+
+ .btn-studia {
+     display: flex;
+     margin: auto;
+     font-weight: 700;
+     line-height:1.87;
+     align-items: center;
+     letter-spacing: 0.06em;
+     color: var(--title-cl);
+     background-color: var(--accent-cl);
+     border: none;
+      padding: 10px 32px;
+      min-width: 200px;
+
+ }
+
+ .btn-portfolio {
+    font-weight: 500;
+    line-height:1.62;
+    letter-spacing: 0.03em;
+    color: var(--black);
+    background-color:#F5F4FA;
+    border: none;
+    padding: 6px 22px;
+ }
+.btn-portfolio:hover,
+.btn-portfolio:focus {
+    background-color: var(--accent-cl);
+    color: var(--title-cl);
+}
+
+ .logo {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1,192;
+    letter-spacing: 0.03em;
+}
+
+.logo-web {
+    color: var(--accent-cl);
+}
+
+.logo-web-header {
+    color: var(--black);
+}
+
+.logo-web-footer {
+    color: var(--title-cl);
+}
+
+.menu-link,
+.contacts {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.142;
+    letter-spacing: 0.02em;
+    color: var(--black);
+}
+
+.current {
+    color: var(--accent-cl);
+}
+
+.contacts {
+    color: var(--grey);
+}
+
+.section {
+    padding-bottom: 94px;
+}
+
+.section-title {
+    color: var(--black);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.66;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title-mini {
+    font-size: 16px;
+    line-height: 1.187;
+    font-weight: 500;
+    text-align: center;
+    color: var(--black);
+    
+}
+
+.section-title-caps {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14x;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 10px;
+    
+}
+
+ .hero-title {
+    color: var(--title-cl);
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+ }
+
+ .title-progect {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--black);
+}
+
+.exemples-title {
+    margin-top: 20px;
+    margin-left: 24px;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+}
+
+.paragraf {
+    font-size: 16px;
+    line-height: 1.187;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.paragraf-ptf {
+    margin-bottom: 20px;
+    margin-left: 24px;
+    font-size: 16px;
+    line-height: 1.87;
+    text-align: left;
+}
+
+.footer-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    margin-top: 0;
+    margin-bottom: 9px;
+    bottom: 0;
+}
+
+.address-color {
+    color: var(--title-cl);
+}
+
+.contacts-mt {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+address {
+    font-style: normal;
+}
+
+.bg-color-dark,
+.footer{
+    background-color: var(--black-rock); 
+}
+.bg-color-dark {
+    height: 600px;
+}
+
+.footer-container {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.header {
+    width: 1200px;
+    background: var(--title-cl);
+    margin-top: 24px;
+    margin-top: 0px;
+}
+
+.bg-color-blu {
+    background: var(-bg-cl-blu);
+    padding-top: 94px;
+
+}
+
+.header-container {
+    height: 79px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.menu {
+    display: inline-flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.menu-item:not(:last-child) {
+    padding-right: 50px;
+}
+
+.header-container {
+    display: inline-flex;
+    align-items: center;
+    
+}
+
+.heder-logo {
+    display: inline-block;
+    margin-right: 93px;
+    align-items: center;
+
+}
+
+.navigation {
+    margin-right: auto;
+}
+
+.hero-content {
+    display: inline-block;
+    width: 696px;
+    margin: 200px 276px;
+}
+
+
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.content-box {
+    width: 270px;
+    flex-basis: calc((100% - 30px) / 4);
+}
+
+.benefits {
+    margin-top: 85px;
+}
+
+.work {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+}
+
+.work-item {
+    flex-basis: calc(100% / 3 - 30px);
+}
+
+.work-tiam {
+    flex-basis: calc(100% / 4 - 30px);
+}
+
+.fleximg {
+    width: 370px;
+    height: 404px;
+    margin-left: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+.b-box {
+    display: block;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+}
+
+.workers {
+    flex-basis: calc(100% / 4 - 30px);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+  }
+  
+  .workers-text {
+      margin-top: 30px;
+      margin-bottom: 10px;
+  }
+
+.menu-portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.menu-portfolio-item:not(:last-child) {
+    padding-right: 9px;
+}
+
+.portfolio-container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    background-color: var(--title-cl);
+}
