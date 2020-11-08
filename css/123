@@ -1,0 +1,106 @@
+using OfficeOpenXml;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ExcelApp
+{
+  class Program
+  {
+    const int ROW_SIZE = 20;
+    const int START_ROW_NUMBER = 1;
+    const string START_CELL = "A";
+    const string SHEET_NAME = "SourceData";
+
+    static char[] Cells { get; } = Enumerable.Range('A', ROW_SIZE).Select(i => (char)i).ToArray();
+
+    static List<string> ReadFromFile(string fileName)
+    {
+      using var package = new ExcelPackage(new FileInfo(fileName));
+      var sheet = package.Workbook.Worksheets[SHEET_NAME];
+
+      var numbers = new List<string>();
+
+      for (var i = START_ROW_NUMBER; ; i++)
+      {
+        var text = sheet.Cells[$"{START_CELL}{i}"].Text;
+
+        if (string.IsNullOrEmpty(text))
+        {
+          break;
+        }
+
+        numbers.Add(text);
+      }
+
+      return numbers;
+    }
+
+    static async Task WriteToFile(List<string> numbers, int accountsNumber, string fileName, string sheetName)
+    {
+      using var package = new ExcelPackage(new FileInfo(fileName));
+      var sheet = package.Workbook.Worksheets[sheetName] ?? package.Workbook.Worksheets.Add(sheetName);
+
+      var rowIndex = 3;
+      var numbersLength = numbers.Count;
+
+      for (var i = 0; i < numbersLength; i += ROW_SIZE, rowIndex++)
+      {
+        var numbersIndex = i;
+
+        foreach (var cell in Cells)
+        {
+          if (numbersIndex >= numbersLength)
+          {
+            break;
+          }
+
+          sheet.Cells[$"{cell}{rowIndex}"].Value = numbers[numbersIndex++];
+        }
+      }
+      sheet.Cells["P2"].Value = accountsNumber;
+
+      File.Create(fileName).Close();
+      await File.WriteAllBytesAsync(fileName, await package.GetAsByteArrayAsync());
+    }
+
+    static async Task Main()
+    {
+      ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+      var (fileName, accountsNumber, dstSheet) = ReadInfo();
+      var numbers = ReadFromFile(fileName);
+      var randomNumbers = SelectRandomAccounts(numbers, accountsNumber);
+      await WriteToFile(randomNumbers, accountsNumber, fileName, dstSheet);
+    }
+
+    static List<string> SelectRandomAccounts(List<string> numbers, int amountToSelect)
+    {
+      var random = new Random();
+      var result = new List<string>();
+
+      for (int i = 0; i < amountToSelect; i++)
+      {
+        result.Add(numbers[random.Next(numbers.Count)]);
+      }
+
+      return result;
+    }
+
+    static (string, int, string) ReadInfo()
+    {
+      Console.Write("Из какого файла читать: ");
+      var fileName = $"{Console.ReadLine()}.xlsx";
+
+      Console.Write("Сколько лицевых счетов писать: ");
+      int accountsNumber = int.Parse(Console.ReadLine());
+
+      Console.Write("В какой лист писать: ");
+      var dstSheet = Console.ReadLine();
+
+      return (fileName, accountsNumber, dstSheet);
+    }
+  }
+}
